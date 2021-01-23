@@ -1,0 +1,17 @@
+CC = gcc
+CFLAGS = -Ofast
+OBJFILES = imp_kl.o mmio.o
+DEPS = mmio.h
+TARGET = KL
+REMOVE_COMMAND = rm
+OUTPUT_EXTENSION = 
+
+
+all: $(TARGET)
+	
+$(TARGET): $(OBJFILES) $(DEPS)
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJFILES)
+	$(REMOVE_COMMAND) $(OBJFILES) 
+
+clean:
+	$(REMOVE_COMMAND) $(TARGET)$(OUTPUT_EXTENSION) 
